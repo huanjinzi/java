@@ -1,18 +1,13 @@
+
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
-import java.util.logging.Logger;;
+import java.util.logging.Logger;
 
 class CountLatchTest {
-
-    static {
-        System.loadLibrary("gvc");
-    }
 
     static CountDownLatch latch  = new CountDownLatch(2);
 
     public static void main(String[] args) {
-
-        Object graph = gv.graph("zz");
         Thread thread = new Thread(new TwoSteps());
         thread.start();
 
